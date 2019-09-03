@@ -1,0 +1,88 @@
+
+.div{
+    padding-top:30px;
+    height:50px;
+}
+/* .formgroup{
+    padding-left:400px;
+    padding-right:400px;
+} */
+.div1{
+    padding-top:30px;
+    padding-bottom: 20px;
+}
+.input-symbol-euro {
+    position: relative;
+}
+.input-symbol-euro input {
+    padding-right:18px;
+  
+}
+.input-symbol-euro:before {
+    position: absolute;
+    top: 7px;
+    content:"€";
+    left: 5px;
+}
+.form1{
+    padding-top:50px;
+}
+.errorMsg {
+    /* color: #cc0000;
+    margin-bottom: 12px; */
+    font-family: 'ING Me Regular';
+    font-size: 16px;
+    color: #525199;
+  }
+.button{
+    margin-left:600px;
+}
+.button1{
+    margin-left:100px;
+}
+.de{
+    margin-left:200px;
+}
+
+
+
+
+
+.mort-title {
+    font-size: 1rm !important;
+}
+
+.nxt-btn{
+    font-family: 'ING Me Regular' !important;
+    font-size: 20px !important;
+    color: #525199 !important;
+    background-color: transparent;
+    border: 1px solid transparent;
+    margin: 0 auto;
+}
+
+.prev-btn{
+    font-family: 'ING Me Regular' !important;
+    font-size: 20px !important;
+    color: #525199 !important;
+    background-color: transparent;
+    border: 1px solid transparent;
+    margin: 0 auto;
+
+}
+
+.nxt-btn:hover {
+    color: #cc0000 !important;
+    font-size: 24px !important;
+
+}
+
+
+.prev-btn:hover{
+    color: #cc0000 !important;
+    font-size: 24px !important;
+}
+
+.row{
+    margin: 0 auto !important
+}
