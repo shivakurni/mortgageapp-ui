@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class AccountType extends Component {
+class TransactionDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -14,21 +14,16 @@ class AccountType extends Component {
 
     componentDidMount() {
         console.log(this.props.match);
-        var customerId=localStorage.getItem("customerId")
-        axios.get('http://10.117.189.99:9093//mortgage/accountSummary/'+customerId).then((response) => {
+        
+var accountNumber=localStorage.getItem("accountNumber");
+        axios.get(`http://10.117.189.99:9093/mortgage/transactions/` +accountNumber).then((response) => {
           console.log(response.data);    
-          // localStorage.setItem("accountNumber",item.accountNumber);
+          localStorage.setItem("accountNumber",response.data.accountNumber);
 
         this.setState({ data: response.data })
         }).catch((error) => {
-            console.log(error.message)  
+            console.log(error.message)
         });
-    }
-
-    transactionClick =(item) => {
-    localStorage.setItem("accountNumber",item.accountNumber);
-    this.props.history.push('./transactionDetails/'+item.accountNumber)
-    
     }
 
 
@@ -52,16 +47,13 @@ class AccountType extends Component {
     //     this.props.history.push(`/trendingStocks`)
     // }
 
-    logout = () => {
-        this.props.history.push('/Login')
-    }
-
     render() {
         // console.log(this.state.modal)
         return (
             <div className="row">
                 <div className="container header-title">
                 <button className="cancel-btn logout-btn nxt-btn" onClick={this.logout}>Logout</button>
+
                     {/* <span className="list-title">List of Stocks</span>                    */}
                     {/* <button className="cancel-btn">Cancelled Stocks</button>
                     <button className="cancel-btn">Trending Stocks</button>
@@ -73,10 +65,12 @@ class AccountType extends Component {
                         <thead>
                             <tr>
                                 <th scope="col" className="header-text">Account Number</th>
-                                {/* <th scope="col" className="header-text">Date</th> */}
-                                <th scope="col" className="header-text">Balance</th>
-                                <th scope="col" className="header-text">AccountType</th>
-                                <th scope="col" className="header-text">Last 5 Transactions</th>
+                                <th scope="col" className="header-text">Date</th>
+                                <th scope="col" className="header-text">Transaction Type</th>
+                                <th scope="col" className="header-text">Description</th>
+                                <th scope="col" className="header-text">Amount</th>
+
+                                {/* <th scope="col" className="header-text">Description</th> */}
 
                             </tr>
                         </thead>
@@ -86,10 +80,12 @@ class AccountType extends Component {
                                 return (
                                     <tr key={i}>
                                         <td className="header-text">{item.accountNumber}</td>
-                                        <td className="header-text">{item.balance}</td>
-                                        {/* <td className="header-text">{item.accountType}</td> */}
-                                        <td className="header-text">{item.accountType}</td>
-                                        <td><button onClick={()=>this.transactionClick(item)}>Transaction Details</button></td>
+                                        <td className="header-text">{item.transactionDate}</td>
+                                        <td className="header-text">{item.transactionType}</td>
+                                        <td className="header-text">{item.decription}</td>
+                                        <td className="header-text">{item.amount}</td>
+
+                                        {/* <td><button>Transcaction Details</button></td> */}
 
                                         {/* <td className="header-text">{item.description}</td> */}
 
@@ -104,4 +100,4 @@ class AccountType extends Component {
         )
     }
 }
-export default AccountType;
+export default TransactionDetails;

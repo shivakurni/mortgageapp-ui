@@ -8,10 +8,12 @@ import Register2 from './components/Register/Register2';
 import Register4 from './components/Register/Register4';
 import Register from './components/Register/Register';
 import Register3 from './components/Register/Register3';
-import Details from './components/Register/Details';
-import AccountSummary from './components/AccountSummary/AccountSummary';
-
+// import Details from './components/Register/Details';
+// import AccountSummary from './components/AccountSummary/AccountSummary';
+import DetailsPage from '../src/components/details/Details'
 import Capture from '../src/images/Capture.PNG';
+import AccountSummary from '../src/components/AccountSummary/AccountSummary'
+import TransactionDetails from '../src/components/transactionDetails/transactionDetails'
 
 
 
@@ -35,9 +37,13 @@ class App extends Component {
           <Route path="/register2" component={Register2} />
           <Route path="/register3" component={Register3} />
           <Route path="/register4" component={Register4} />
-          <Route path="/details" component={Details} />
+          {/* <Route path="/details" component={Details} /> */}
           <Route path="/login" component={Login} />
+          {/* <Route path="/accountSummary" component={AccountSummary} /> */}
+          <Route path="/detailsPage" component={DetailsPage} />
           <Route path="/accountSummary" component={AccountSummary} />
+          <Route path="/transactionDetails" component={TransactionDetails} />
+
 
 
         </div>

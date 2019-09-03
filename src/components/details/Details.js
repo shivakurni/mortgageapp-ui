@@ -20,19 +20,25 @@ class DetailsPage extends Component{
     //   onClickLogin=()=>{
     //       // this.props.history.push('/login');
     //   }
+
+    login = () => {
+      this.props.history.push('/login');
+    }
     
       render(){
         return(
             <div>
-                
+                <button id="btn2" className="btn nxt-btn  login-btn" onClick={this.login}>Login</button>
+
                 <div className="tab">
                 <table align="center" border="1px">
-                <h4 align="center">congratulations , your mortgage has been created</h4>
-                <hr/>
+                {/* <h4 align="center">congratulations , your mortgage has been created</h4> */}
+                {/* <hr/> */}
                   <thead>
                     <tr>
                       <td>Login Id</td>
                       <td>Password</td>
+                     
                       <td>Transaction Account Number</td>
                       <td>Mortgage Account Number</td>
                     </tr>
@@ -42,21 +48,20 @@ class DetailsPage extends Component{
                 
 
 
-                {this.state.mortgageDetails.map((item,j)=>{
-                    return(
-                        <tr key={j}>
-                        <td className="de"><b>Login Id:</b>{item.customerId} </td>
+                {/* {this.state.mortgageDetails.map((item,j)=>{ */}
+                   
+                        <tr>
+                        <td className="de"><b></b>{this.state.loginId} </td>
                         <td className="de"><b></b>{this.state.password}</td>
 
-                        <td className="de"> <b>Transaction Account Number</b>{item.transactionAccountNumber}</td>
-                        <td className="de"><b>Mortgage Account Number</b>{item.mortgageAccountNumber}</td>
+                        <td className="de"> <b></b>{this.state.transactionAccountNumber}</td>
+                        <td className="de"><b></b>{this.state.mortgageAccountNumber}</td>
                         </tr>
-                    )
-                })}
+                    
                         </tbody>       
                      </table>
                      </div>
-                     <button type="button" id="btn9" className="btn btn-primary outlined" onClick={this.onClickLogin}>Login</button>
+                     {/* <button type="button" id="btn9" className="btn btn-primary outlined" onClick={this.onClickLogin}>Login</button> */}
                     
                 </div>
         )

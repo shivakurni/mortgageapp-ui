@@ -4,7 +4,7 @@ import Register2 from './Register2';
 import Register3 from './Register3';
 import Register4 from './Register4';
 import Steps from './Steps';
-import Details from './Details';
+import DetailsPage from '../details/Details';
 
 class MasterRegister extends Component {
     constructor(props) {
@@ -43,6 +43,7 @@ class MasterRegister extends Component {
         const errors = {
             propertyCostError: '',
             depositError: '',
+            salaryError:'',
             firstNameError: '',
             lastNameError: '',
             phoneNumberError: '',
@@ -81,16 +82,10 @@ class MasterRegister extends Component {
                     errors.lastNameError = " please enter the alphabet characters only";
                 }
             }
-            // if (this.state.surName < 1) {
-            //     isError = true;
-            //     errors.surNameError = "surName name cannot be null";
-            // }
-            // if ((this.state.surName) !== 'undefined') {
-            //     if (!(this.state.surName).match(/^[a-zA-Z ]*$/)) {
-            //         isError = true;
-            //         errors.surNameError = " please enter the alphabet characters only";
-            //     }
-            // }
+            if (this.state.salary < 1) {
+                isError = true;
+                errors.salaryError = "salary cannot be null";
+            }
         }
 
         if (this.state.step > 2) {
@@ -129,6 +124,7 @@ class MasterRegister extends Component {
                 firstNameError: '',
                 lastNameError: '',
                 // surNameError: '',
+                salaryError:'',
                 phoneNumberError: '',
                 emailError: '',
                 confirmEmailError: ''
@@ -171,6 +167,8 @@ class MasterRegister extends Component {
                         firstNameError={this.state.firstNameError}
                         lastName={this.state.lastName}
                         lastNameError={this.state.lastNameError}
+                        salary={this.state.salary}
+                        salaryError={this.state.salaryError}
                         // contractType={this.state.contractType}
                         // jobStartDate={this.state.jobStartDate}
                         dob={this.state.dob}
@@ -216,7 +214,7 @@ class MasterRegister extends Component {
                         propertyCost={this.state.propertyCost} />
                 </div>
             case 5:
-                return <Details />
+                return <DetailsPage />
             default:
                 return null
         }

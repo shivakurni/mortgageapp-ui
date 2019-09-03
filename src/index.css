@@ -157,8 +157,17 @@ td.header-text{
    font-size: 30px;
  }
 
+
  @media (max-width: 480px) { 
   .navbar-brand {
     margin: 0 !important;
   }
  }
+
+
+ .login-btn, .logout-btn {
+  float: right !important;
+  margin-right: 50px !important;
+ }
+ 
+

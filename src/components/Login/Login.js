@@ -8,6 +8,7 @@ class Login extends Component {
             loginData: {
                 loginId: '',
                 password: ''
+
             },
             fields: {},
             errors: {}
@@ -34,7 +35,9 @@ class Login extends Component {
             console.log(this.state);
             axios.post('http://10.117.189.99:9093/mortgage/login', loginData).then((response) => {
                 console.log(response.data);
-                this.props.history.push('/register');
+                localStorage.setItem("customerId",response.data.customerId);
+                console.log()
+                this.props.history.push('/accountSummary');
             }).catch((error) => {
 
             });
@@ -97,7 +100,7 @@ class Login extends Component {
                             <div className="errorMsg">{this.state.errors.password}</div>
                         </div>
                     </div>
-                    <button type="submit" id="btn1" className="btn btn-primary-outlined" onClick={this.onClickLogin}>Continue</button>
+                    <button type="submit" id="btn1" className="btn btn-primary" onClick={this.onClickLogin}>Login</button>
 
                 </form>
             </div>

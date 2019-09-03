@@ -6,7 +6,7 @@ class Register extends Component {
     render() {
         return (
             <div align="center row">
-                <h1 align="center mort-title">Do you want to Buy a Home Loan, Please fill the details...</h1>
+                <h1 align="center mort-title">Do you want to avail Mortgage</h1>
                 <form className="form1 container row" >
                     <div className="form-group col-md-4">
                         <label ><b>Operation Type</b></label>

@@ -3,6 +3,7 @@ import './Register.css';
 import axios from 'axios';
 import swal from 'sweetalert'
 import { withTranslation} from 'react-i18next';
+import {withRouter} from 'react-router-dom'
 
 
 
@@ -26,20 +27,22 @@ class Register4 extends Component{
              axios.post('http://10.117.189.99:9093/mortgage/mortgageSignup',registerData).then((response)=>{
              console.log(response.data);
             //  this.props.history.push('/login');
-            //  localStorage.setItem("loginId",response.data.loginId);
-            //  localStorage.setItem("password",response.data.password);
-            //  localStorage.setItem("transactionAccountNumer",response.data.transactionAccountNumer);
-            swal("Account created successfully..! Please check your mail for Mortgage account number.")
-              this.props.history.push('/login');
+             localStorage.setItem("loginId",response.data.loginId);
+             localStorage.setItem("password",response.data.password);
+
+             localStorage.setItem("mortgageAccountNumber",response.data.mortgageAccountNumber);
+             localStorage.setItem("transactionAccountNumber",response.data.transactionAccountNumber);
+            // swal(response.data.message)
+            this.props.history.push('/detailsPage');
            
          }).catch((error)=>{
              console.log(error);        
          });
     }
 
-    login = () => {
-        this.props.history.push('/login');
-    }
+    // login = () => {
+    //     this.props.history.push('/login');
+    // }
     render(){
         return(
             <div align="center" className="container">
@@ -76,5 +79,5 @@ class Register4 extends Component{
         )
     }
 }
-export default withTranslation()(Register4);
+export default withRouter(Register4);
 // export default Register4;

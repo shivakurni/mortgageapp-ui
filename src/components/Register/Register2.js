@@ -6,6 +6,8 @@ class Register2 extends Component {
     render() {
         return (
             <div className="">
+                                <h1 align="center mort-title">Enter Personal Details</h1>
+
                 <form className="container" >
                     <div className="row">
                     <div className="col-md-1"></div>
