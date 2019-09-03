@@ -148,7 +148,7 @@ td.header-text{
  }
 
  .navbar-brand{
-   color: orange;
+   color: white;
    font-size: 20px;
    font-weight: bold;
  }
@@ -168,6 +168,10 @@ td.header-text{
  .login-btn, .logout-btn {
   float: right !important;
   margin-right: 50px !important;
+ }
+
+ .nav-tab{
+   background: orange;
  }
  
 

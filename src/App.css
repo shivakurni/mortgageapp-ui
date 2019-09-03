@@ -25,9 +25,9 @@
 
 .nav-header {
   height: 60px;
-    border-bottom-width: 1px;
+    /* border-bottom-width: 1px;
     border-bottom-style: solid;
-    border-bottom-color: LightGray;
+    border-bottom-color: LightGray; */
 }
 
 .Capture {

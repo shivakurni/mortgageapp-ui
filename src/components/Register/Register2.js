@@ -68,8 +68,7 @@ class Register2 extends Component {
                         <div className="col-md-4">
                             <label><b>Employment status</b></label>
                             <select className="form-control" onChange={this.props.onChange} value={this.props.employementStatus} name="employmentStatus" id="employmentStatus">
-                            <option value="professional">Select</option>
-
+                            <option>Select</option>
                                 <option value="Employed">Employed</option>
                                 <option value="Self-employed">Self-employed</option>
                             </select>
@@ -80,8 +79,8 @@ class Register2 extends Component {
 
                             <label ><b>Occupation</b></label>
                             <select className="form-control" onChange={this.props.onChange} value={this.props.occupation} name="occupation" id="occupation">
-                            <option value="professional">Select</option>
-                                <option value="professional">professional</option>
+                            <option>Select</option>
+                                <option value="professional">Professional</option>
                                 <option value="Manager">Manager</option>
                                 <option value="Other employment">Other employment</option>
                             </select>

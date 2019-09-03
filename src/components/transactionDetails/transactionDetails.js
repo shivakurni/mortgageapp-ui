@@ -47,12 +47,23 @@ var accountNumber=localStorage.getItem("accountNumber");
     //     this.props.history.push(`/trendingStocks`)
     // }
 
+    logout = () => {
+        this.props.history.push('/Login')
+    }
+
+
+    back = () => {
+        this.props.history.push('/accountSummary')
+    }
+
+
     render() {
         // console.log(this.state.modal)
         return (
             <div className="row">
                 <div className="container header-title">
                 <button className="cancel-btn logout-btn nxt-btn" onClick={this.logout}>Logout</button>
+                <button className="cancel-btn logout-btn nxt-btn" onClick={this.back}>back</button>
 
                     {/* <span className="list-title">List of Stocks</span>                    */}
                     {/* <button className="cancel-btn">Cancelled Stocks</button>

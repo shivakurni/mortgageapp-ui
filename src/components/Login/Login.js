@@ -86,7 +86,7 @@ class Login extends Component {
             <div>
                 <form className="form1 container">
                     <div className="form-group" >
-                        <h2 align="center"> Login form</h2>
+                        <h2 align="center"> Login</h2>
                         <label><b>Login Id</b></label>
                         <div>
                             <input type="text" className="form-control " name="loginId" id="loginId" value={this.state.fields.loginId} onChange={this.handleChange} required />

@@ -47,7 +47,6 @@ class Register4 extends Component{
         return(
             <div align="center" className="container">
                 <h1 align="center">Contact  Details</h1>
-                <button id="btn8" className="" onClick={this.login}>Login</button>
 
                     <form className="form1 row" >
                       <div className="form-group col-md-4" >

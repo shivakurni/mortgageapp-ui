@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import './Register.css';
+import { withTranslation } from 'react-i18next'
 
 class Register extends Component {
 
     render() {
+        let { t  } = this.props;
         return (
             <div align="center row">
-                <h1 align="center mort-title">Do you want to avail Mortgage</h1>
+                <h1 align="center mort-title">{t('heading')}</h1>
                 <form className="form1 container row" >
                     <div className="form-group col-md-4">
                         <label ><b>Operation Type</b></label>
@@ -21,7 +23,7 @@ class Register extends Component {
                     <div className="form-group col-md-4" >
                         <label><b>Property Cost</b></label>
                         <div className="input-symbol-euro">
-                            <input type="text" className="form-control" name="propertyCost" id="propertyCost" value={this.props.propertyCost} min="1" step="1" onChange={this.props.onChange} required />
+                            <input type="number" className="form-control" name="propertyCost" id="propertyCost" value={this.props.propertyCost} min="1" step="1" onChange={this.props.onChange} required />
                             <div className="errorMsg">{this.props.propertyCostError}</div>
                         </div>
                     </div>
@@ -42,4 +44,4 @@ class Register extends Component {
         )
     }
 }
-export default Register;
+export default withTranslation()(Register);

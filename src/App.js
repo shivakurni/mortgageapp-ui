@@ -14,19 +14,33 @@ import DetailsPage from '../src/components/details/Details'
 import Capture from '../src/images/Capture.PNG';
 import AccountSummary from '../src/components/AccountSummary/AccountSummary'
 import TransactionDetails from '../src/components/transactionDetails/transactionDetails'
+import { withTranslation } from 'react-i18next';
 
 
 
 class App extends Component {
+
+  handleSelect = (event) => {
+    let { i18n } = this.props;
+    i18n.changeLanguage(event.target.value)
+  }
+
+
+
   render() {
+    let { t  } = this.props;
     return (
 
       <HashRouter>
         <div className="App">
-          <nav className="navbar navbar-default">
+          <nav className="navbar navbar-default nav-tab">
             <div className="container-fluid nav-header">
               <img className="Capture" src={Capture} alt="Capture" />
               <Link className="navbar-brand" to='/'>ING Bank</Link>
+              <select onChange={this.handleSelect}>
+              <option value="en">English</option>
+              <option value="sp">Spanish</option>
+            </select>
             </div>
           </nav>
 
@@ -52,4 +66,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default  withTranslation()(App);

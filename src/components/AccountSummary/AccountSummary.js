@@ -56,12 +56,15 @@ class AccountType extends Component {
         this.props.history.push('/Login')
     }
 
+
     render() {
         // console.log(this.state.modal)
         return (
             <div className="row">
                 <div className="container header-title">
                 <button className="cancel-btn logout-btn nxt-btn" onClick={this.logout}>Logout</button>
+
+                   
                     {/* <span className="list-title">List of Stocks</span>                    */}
                     {/* <button className="cancel-btn">Cancelled Stocks</button>
                     <button className="cancel-btn">Trending Stocks</button>
